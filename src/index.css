@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&family=Ubuntu+Condensed&display=swap');
+
+:root{
+  /* CSS HEX */
+--dark-liver: #54494bff;
+--mint-cream: #f1f7edff;
+--turquoise-green: #91c7b1ff;
+--bright-maroon: #b33951ff;
+--flax: #e3d081ff;
+--waka-font: 'Ubuntu Condensed', sans-serif;
+--title-font:'Secular One', sans-serif;
+}
+
+.title-font{
+  font-family: var(--title-font);
+}
+.waka-logo{
+  font-family: var(--waka-font);
+  font-size: 40px !important;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

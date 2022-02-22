@@ -1,10 +1,7 @@
-import Header from "../components/Header/Header";
 
 const Home = () => {
-  return ( 
-  <>
-    <Header/>
-  </>
+  return (
+    <p>Hola, estoy logueado</p>
     );
 }
  

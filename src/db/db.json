@@ -1,11 +1,8 @@
 {
-  "usuarios":[
-
-  ],
-  "productos":[
-
-  ],
-  "cursos":[
-    
+  "users":[
+    {
+      "email":"diego@gmail.com",
+      "password":"123456"
+    }
   ]
 }

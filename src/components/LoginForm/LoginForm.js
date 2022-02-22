@@ -1,26 +1,53 @@
-import { Container, Form, Button } from "react-bootstrap";
+import axios from 'axios';
+import { useState } from 'react';
+import {Form, Button} from 'react-bootstrap'
+import { Navigate } from 'react-router-dom';
 
 const LoginForm = () => {
-  return (
-    <Container className='mt-5 pt-5 w-25'>
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
+  const [values, setValues] = useState({
+    email:'',
+    password:''
+  })
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
-    </Container>
+  const checkData = async ()=>{
+    const response = await axios.get('http://localhost:3500/users');
+    const {data} = response;
+    const userFound = data.find(user=>user.email === values.email);
+    if(userFound){
+      userFound.password === values.password?
+      //GUARDAR EN LS
+      <Navigate to='/home'/>
+      :
+      alert('Credenciales incorrectas')
+    }
+  }
+  const handleKeyUp = (e) =>{
+    setValues({
+      ...values,
+      [e.target.name]:e.target.value
+    })
+  }
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    checkData();
+  }
+  return (
+    <Form className='w-25' onSubmit={handleSubmit}>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control onKeyUp={handleKeyUp} type="email" placeholder="Enter email" name="email" />
+        <Form.Text className="text-muted">
+          We'll never share your email with anyone else.
+        </Form.Text>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control onKeyUp={(e)=>handleKeyUp(e)} type="password" placeholder="Password" name="password"/>
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
   );
 };
 

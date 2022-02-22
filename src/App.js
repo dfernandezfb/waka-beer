@@ -1,20 +1,27 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from "./pages/LandingPage";
-import PrivateRoute from "./routes/PrivateRoute";
+import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home";
-import RegisterPage from "./pages/RegisterPage";
-import LoginPage from "./pages/LoginPage";
-import 'bootstrap/dist/css/bootstrap.css'
+import LandingPage from "./pages/LandingPage";
+import Login from "./pages/Login";
+import PrivateRoute from "./routes/PrivateRoute";
 
 function App() {
   return (
     <Router>
+      <Layout>
       <Routes>
-        <Route path='/' element={<LandingPage/>}/>
-        <Route path='/registro' element={<RegisterPage/>}/>
-        <Route path='/login' element={<LoginPage/>}/>
-        <Route path='/home' element={<PrivateRoute><Home/></PrivateRoute>}/>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/home"
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+          />
       </Routes>
+          </Layout>
     </Router>
   );
 }

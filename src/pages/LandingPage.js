@@ -1,15 +1,11 @@
-import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
-import Landing from "../components/Landing/Landing";
+import LandingMain from "../components/LandingMain/LandingMain";
+import Layout from "../components/Layout/Layout";
 
 const LandingPage = () => {
-  return ( 
-    <>
-      <Header/>
-      <Landing/>
-      <Footer/>
-    </>
-   );
+  return (
+      <LandingMain/>
+  );
 }
  
 export default LandingPage;

@@ -1,8 +1,0 @@
-.carousel-image{
-  object-fit: cover;
-  object-position:bottom;
-  max-height: 80vh;
-}
-h2{
-  font-family: var(--title-font);
-}

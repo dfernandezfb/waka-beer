@@ -1,23 +1,29 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import {Form, Button} from 'react-bootstrap'
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { UserContext } from '../../context/UserContext';
 
 const LoginForm = () => {
   const [values, setValues] = useState({
     email:'',
     password:''
   })
-
+  const {setUser} = useContext(UserContext)
+  const navigate = useNavigate();
   const checkData = async ()=>{
     const response = await axios.get('http://localhost:3500/users');
     const {data} = response;
     const userFound = data.find(user=>user.email === values.email);
     if(userFound){
-      userFound.password === values.password?
-      //GUARDAR EN LS
-      <Navigate to='/home'/>
-      :
+      if(userFound.password === values.password){
+        localStorage.setItem('user',JSON.stringify(userFound));
+        setUser(userFound);
+        navigate('/home');
+      }else{
+        alert('Credenciales incorrectas')
+      }
+    }else{
       alert('Credenciales incorrectas')
     }
   }

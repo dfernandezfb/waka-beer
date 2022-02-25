@@ -1,40 +1,42 @@
 {
-  "users":[
+  "users": [
     {
-      "email":"diego@gmail.com",
-      "password":"123456"
+      "id": 1,
+      "name": "Waka",
+      "age": 45,
+      "email": "waka@gmail.com",
+      "password": "wakawaka",
+      "role": "ADMIN"
+    },
+    {
+      "id": 2,
+      "name": "Diego",
+      "age": 26,
+      "email": "diego@gmail.com",
+      "password": "DD123FF",
+      "role": "USER"
+    },
+    {
+      "name": "Roman",
+      "password": "RR123GG",
+      "email": "roman@gmail.com",
+      "age": "29",
+      "id": 3,
+      "role": "USER"
     }
   ],
-  "products":[
+  "products": [
     {
-      "id":1,
-      "name":"IPA 1L",
-      "price":100,
-      "image":"https://images.unsplash.com/photo-1585620384249-5cf9442c87f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=963&q=80"
+      "id": 1,
+      "name": "IPA 1L",
+      "price": 100,
+      "image": "https://images.unsplash.com/photo-1585620384249-5cf9442c87f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=963&q=80"
     },
     {
-      "id":2,
-      "name":"Scottish 1L",
-      "price":100,
-      "image":"https://images.unsplash.com/photo-1585620384249-5cf9442c87f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=963&q=80"
-    },
-    {
-      "id":3,
-      "name":"Golden 1L",
-      "price":100,
-      "image":"https://images.unsplash.com/photo-1585620384249-5cf9442c87f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=963&q=80"
-    },
-    {
-      "id":4,
-      "name":"Honey 1L",
-      "price":100,
-      "image":"https://images.unsplash.com/photo-1585620384249-5cf9442c87f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=963&q=80"
-    },
-    {
-      "id":5,
-      "name":"Porter 1L",
-      "price":100,
-      "image":"https://images.unsplash.com/photo-1585620384249-5cf9442c87f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=963&q=80"
+      "id": 3,
+      "name": "Golden 1L",
+      "price": 100,
+      "image": "https://images.unsplash.com/photo-1585620384249-5cf9442c87f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=963&q=80"
     }
   ]
 }

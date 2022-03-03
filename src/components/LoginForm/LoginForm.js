@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useContext, useState } from 'react';
-import {Form, Button} from 'react-bootstrap'
-import { Navigate, useNavigate } from 'react-router-dom';
+import {Form, Button, Alert} from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom';
 import { LOGIN_VALUES, URL_USERS } from '../../constants';
 import { UserContext } from '../../context/UserContext';
 import { validateLogin } from '../../helpers/validations';
@@ -9,6 +9,7 @@ import useForm from '../../hooks/useForm';
 import './LoginForm.css'
 
 const LoginForm = () =>{
+  const [error, setError] = useState(null);
   const {setUser} = useContext(UserContext)
   const navigate = useNavigate();
   const checkData = async ()=>{
@@ -21,10 +22,10 @@ const LoginForm = () =>{
         setUser(userFound);
         navigate('/productos');
       }else{
-        alert('Credenciales incorrectas')
+        setError(true)
       }
     }else{
-      alert('Credenciales incorrectas')
+      setError(true)
     }
   }
   
@@ -46,6 +47,8 @@ const LoginForm = () =>{
       <Button className="login-button" type="submit">
         Ingresar
       </Button>
+      {Object.keys(errors).length!==0?<Alert variant='danger' className='mt-2'>Ingrese los datos correctamente</Alert>:null}
+      {error && <Alert variant='danger' className='mt-2'>Credenciales incorrectas</Alert>}
     </Form>
   );
 };

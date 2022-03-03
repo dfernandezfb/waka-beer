@@ -1,9 +1,9 @@
 import {Navigate} from 'react-router-dom'
 
 const AdminRoute = ({children}) => {
-  const user = localStorage.getItem('user');
+  const user = JSON.parse(localStorage.getItem('user'));
   return ( 
-    user? (user.role=='ADMIN'? children :<Navigate to='/home'/>): <Navigate to='/'/>
+    user? (user.role==='ADMIN'? children :<Navigate to='/home'/>): <Navigate to='/'/>
    );
 }
  

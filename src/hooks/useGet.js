@@ -7,7 +7,7 @@ const useGet = (url) => {
   useEffect(()=>{
     getSomething(url, setData);
   },[])
-  return data
+  return [data,setData]
 }
  
 export default useGet;

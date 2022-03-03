@@ -1,13 +1,16 @@
 import LoginForm from "../components/LoginForm/LoginForm";
 import styled from "styled-components";
 
-const FormContainer = styled.div`
+export const FormContainer = styled.div`
 width:100vw;
 height:70vh;
+display:flex;
+justify-content:center;
+align-items:center;
 `
 const Login = () => {
   return (
-    <FormContainer className="d-flex justify-content-center align-items-center">
+    <FormContainer>
       <LoginForm/>
     </FormContainer> 
     );

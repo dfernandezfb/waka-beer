@@ -13,7 +13,7 @@ const useForm = (initialValues, submit,validations) => {
     e.preventDefault();
     if(validations){
       errors = validations(values);
-      if(Object.keys(errors)===0){
+      if(Object.keys(errors).length===0){
         submit();
       }
     }else{

@@ -29,7 +29,7 @@ const LoginForm = () =>{
     }
   }
   
-  const {values, handleKeyUp, handleSubmit, errors} = useForm(LOGIN_VALUES, checkData, validateLogin)
+  const {values, handleKeyUp, handleSubmit} = useForm(LOGIN_VALUES, checkData)
   
   return (
     <Form className='w-25' onSubmit={handleSubmit}>

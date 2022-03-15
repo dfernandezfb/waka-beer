@@ -14,6 +14,7 @@ import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
 
 function App() {
+  console.log('hola');
   return (
     <Router>
       <UserProvider>

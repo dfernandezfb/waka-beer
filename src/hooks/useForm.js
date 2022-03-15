@@ -20,8 +20,14 @@ const useForm = (initialValues, submit, validations) => {
   }
   const handleSubmit = (e) =>{
     e.preventDefault();
-    setErrors(validations(values));
-    setSubmitting(true)
+    if(validations){
+      errors = validations(values);
+      if(Object.keys(errors).length===0){
+        submit();
+      }
+    }else{
+      submit();
+    }
   }
   return {
     values,

@@ -16,6 +16,7 @@ const LoginForm = () =>{
     const response = await axios.get(URL_USERS);
     const {data} = response;
     const userFound = data.find(user=>user.email === values.email);
+    console.log(userFound);
     if(userFound){
       if(userFound.password === values.password){
         localStorage.setItem('user',JSON.stringify(userFound));
@@ -29,7 +30,7 @@ const LoginForm = () =>{
     }
   }
   
-  const {values, handleKeyUp, handleSubmit, errors} = useForm(LOGIN_VALUES, checkData, validateLogin)
+  const {values, handleKeyUp, handleSubmit} = useForm(LOGIN_VALUES, checkData)
   
   return (
     <Form className='w-25' onSubmit={handleSubmit}>

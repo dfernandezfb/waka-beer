@@ -27,16 +27,22 @@
   ],
   "products": [
     {
-      "id": 1,
+      "id": 3,
       "name": "IPA 1L",
       "price": 100,
       "image": "https://images.unsplash.com/photo-1585620384249-5cf9442c87f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=963&q=80"
     },
     {
-      "id": 3,
-      "name": "Golden 1L",
-      "price": 100,
-      "image": "https://images.unsplash.com/photo-1585620384249-5cf9442c87f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=963&q=80"
+      "name": "asdasd",
+      "price": "150",
+      "image": "",
+      "id": 4
+    },
+    {
+      "name": "Honey 1L",
+      "price": "200",
+      "image": "",
+      "id": 5
     }
   ]
 }

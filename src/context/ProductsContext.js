@@ -1,15 +1,20 @@
-import {useState} from 'react'
+import {createContext} from 'react'
 
-export const ProductsContext = createContext();
-  const [products, setProducts] = useState([])
+const ProductsContext = createContext();
+
 const ProductsProvider = ({children}) => {
+  const [products, setProducts] = useState([]);
+  
+
   return ( 
     <ProductsContext.Provider value={{
-      products
-    }}>
+      products,
+      addProducts,
+      deletePrducts
+    }} >
       {children}
     </ProductsContext.Provider>
-   );
+  );
 }
  
 export default ProductsProvider;
